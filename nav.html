@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <title>MusicO</title>
+  <style>
+.sc {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to multiple rows */
+  gap: 20px; /* Adjust the gap between tiles */
+  padding: 20px; /* Add some padding for spacing */
+  padding-top: 10px;
+}
+
+.st {
+  position: relative; /* For positioning the hover effect */
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: calc(33.33% - 20px); /* Adjust width of each tile */
+  /* background: rgb(13,13,13);
+background: linear-gradient(17deg, rgba(13,13,13,1) 0%, rgba(37,37,37,1) 47%, rgba(127, 35, 218, 0.796) 93%); */
+background: #000000ca;
+  color: rgba(245, 245, 245, 0.908);
+  border-radius: 15px;
+  border-color: rgba(255, 255, 255, 0.34); 
+  border-style: solid;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s; /* Add transition for smooth animation */
+}
+
+.st:hover {
+  transform: translateY(-5px); /* Move tile up on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+.st img {
+  width: 100px; /* Adjust width of the image */
+  height: auto;
+  object-fit: cover;
+  margin-right: 10px; /* Add some space between image and text */
+}
+
+.song-details {
+  flex: 1; /* Allow details to take remaining space */
+  padding: 10px;
+  
+}
+
+.stt{
+  margin: 0;
+  font-size: 16px;
+  color: rgba(245, 245, 245, 0.908);
+}
+
+.artist, .album {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #666666;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+nav{
+      font-family: "Rubik";
+}
+body{
+  /* background: rgb(0,0,0);  */
+ background-image: radial-gradient(circle, rgba(0,0,0,1) 37%, rgba(57,56,57,1) 70%);
+
+  font-family: "Rubik";
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s ease;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    height: 60px;
+    /* background: rgb(77,77,77);
+    background: linear-gradient(180deg, rgba(77,77,77,1) 0%, rgba(127, 35, 218, 0.796) 0%, rgba(0,8,10,1) 55%, rgba(0,10,11,1) 100%); */
+    /* background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,1) 37%, rgba(57,56,57,1) 70%); */
+background: black;
+    color: rgba(245, 245, 245, 0.908);
+    cursor: pointer;
+}
+
+nav ul li{
+    padding: 0 12px;
+    cursor: pointer;
+}
+nav ul li:hover{
+    color: rgba(57,56,57,1);
+}
+span:hover{
+  color: #484649;
+}
+
+  .brand img{
+    width: 80px;
+}
+
+
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.sidenav {
+  height: 100%; 
+  width: 0; 
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color: #111; 
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s; 
+}
+
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgba(245, 245, 245, 0.908);
+  display: block;
+  transition: 0.3s;
+}
+
+
+.sidenav a:hover {
+  color: #ad55d5;
+  cursor: pointer;
+}
+
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#contact {
+
+   right:0px; bottom: 10px;
+  background-color: #8014b2 
+  
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 20%;
+  float: left;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  margin-left: 40px;
+  padding-left: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+#mainn {
+      max-width: 800px;
+      margin: 50px auto;
+     
+    }
+
+    #featured-playlists {
+      display: flex;
+    
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+    }
+
+    .playlist {
+      width: 200px;
+      border-radius: 8px;
+
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .playlist:hover {
+      transform: scale(1.05);
+    }
+
+    .playlist img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .playlist-info {
+      color: rgba(245, 245, 245, 0.908);
+      background-color: #111;
+      padding: 15px;
+    }
+
+    .playlist-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: rgba(245, 245, 245, 0.908);
+    }
+
+    .playlist-description {
+      font-size: 0.9em;
+    }
+
+    h2{
+      color: rgba(245, 245, 245, 0.908);
+      padding-bottom: 40px;
+    }
+ 
+
+
+.search-container{
+  border-radius: 100px;
+  float: right;
+  margin-top: 1px;
+  color: white;
+
+
+}
+
+input[type=text] {
+  padding: 6px;
+  margin-top: 1px; 
+  width: 300px; 
+  font-size: 17px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-color: rgba(127, 35, 218, 0.796);
+  border-radius: 50px;
+  border-style: solid;
+  background: rgb(77,77,77);
+  /* background: linear-gradient(180deg, rgba(77,77,77,1) 0%, rgba(127, 35, 218, 0.796) 0%, rgba(0,8,10,1) 55%, rgba(0,10,11,1) 100%); */
+  color: white;
+}
+#toptt {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#yp {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+input[type=text]::placeholder{
+    color: rgba(245, 243, 247, 0.796);
+    font-size: small;
+}
+
+
+  </style>
+</head>
+    <body>
+  <nav>
+		<ul>
+			<li class="brand"><img src="/Volumes/HargunSD/logonew3.png" alt="MusicO">MusicO</li>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a id="p" href="/Users/hargundeepsingh/vscode/trysong.html">Top Punjabi Songs</a>
+        <a id="b" href="/Users/hargundeepsingh/vscode/bollywood.html">Bollywood Hits</a>
+        <a  id="t" href="/Users/hargundeepsingh/vscode/gymp.html">TreadMill Strut Mix</a>
+        <a  id="a" href="/Users/hargundeepsingh/vscode/ajp.html">Bollywood Hits</a>
+        <a id="ts" href="/Users/hargundeepsingh/vscode/ts.html">Taylor Swift</a>
+        <a id="c" href="/Users/hargundeepsingh/vscode/cpl.html">Car Playlist</a>
+        <a  id="l" href="/Users/hargundeepsingh/vscode/comingup.html">Local Music </a>
+      </div>
+      <span id="ett" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+      <div id="main">
+      </div>
+      <div class="search-container">
+        <form action="">
+          <i id="languageButton" class="fa-solid fa-language fa-xl" style="color: white; margin-left: 990px;"></i>
+          <input  type="text" placeholder="What do you want to listen to ?" name="search" id="searchInput">
+          <a id="logout" style="color: white;"><i class="fa-solid fa-xl fa-arrow-right-from-bracket"></i> </a>
+        
+        </form>
+        
+      </div>
+		</ul>
+    
+	</nav>
+  <h2 id="yp">Recently Played</h2>
+    <div class="sc">
+        <div class="st">
+          <img src="/Volumes/HargunSD/cp.png" alt="Song 1 Cover">
+          <div class="song-details">
+            <h2 class="stt" id="a">Car Playlists</h2>
+            
+
+          </div>
+        </div>
+        
+        <div class="st">
+          <img src="/Volumes/HargunSD/ajm.png" alt="Song 1 Cover">
+          <div class="song-details">
+            <h2 class="stt" id="bb">Anuv Jain Mix</h2>
+          </div>
+        </div>
+        
+        <div class="st">
+          <img src="/Volumes/HargunSD/ts.png" alt="Song 1 Cover">
+          <div class="song-details">
+            <h2 class="stt" id="cc">Taylor Swift</h2>
+
+          </div>
+        </div>
+        
+        <div class="st">
+          <img src="/Volumes/HargunSD/tsm.png" alt="Song 1 Cover">
+          <div class="song-details">
+            <h2 class="stt" id="d">Gym Playlist</h2>
+
+          </div>
+        </div>
+        
+        <div class="st">
+          <img src="/Volumes/HargunSD/bth.png" alt="Song 1 Cover">
+          <div class="song-details">
+            <h2 class="stt" id="e">Bollywood Hits-10</h2>
+
+          </div>
+        </div>
+        
+        <div class="st">
+          <img src="/Volumes/HargunSD/topp.png" alt="Song 1 Cover">
+          <div class="song-details">
+            <h2 class="stt" id="f">TOP 10 Punjabi Songs</h2>
+
+          </div>
+        </div>
+        
+      </div>
+      <h2 id="toptt">Featured Playlists</h2>
+  <div id="mainn">
+    <div id="featured-playlists">
+      <div class="playlist" id="punjabi">
+        <a href="/Users/hargundeepsingh/vscode/top10.html"><img src="/Volumes/HargunSD/topp.png"></a>
+        <div class="playlist-info">
+          <div class="playlist-title" id="punjabititle">TOP 10 Punjabi Songs </div>
+          <div class="playlist-description" id="punjabides">Trending punjabi songs</div>
+        </div>
+      </div>
+      <div class="playlist" id="bollywood">
+        <a href="/Users/hargundeepsingh/vscode/bollywood.html"><img src="/Volumes/HargunSD/bth.png" alt="Playlist Image"></a>
+        <div class="playlist-info">
+          <div class="playlist-title" id="bolltitle">Bollywood Hits-10</div>
+          <div class="playlist-description" id="bolldes">Bollywood Best</div>
+        </div>
+      </div>
+      <div class="playlist" id="gym">
+        <a href="/Users/hargundeepsingh/vscode/gymp.html"><img src="/Volumes/HargunSD/tsm.png" alt="Playlist Image"></a>
+        <div class="playlist-info">
+          <div class="playlist-title" id="gymt">Gym Playlist</div>
+          <div class="playlist-description" id="gymdes">Workout & Burn.</div>
+        </div>
+      </div>
+      <div class="playlist" id="Anuv jain">
+        <a href="/Users/hargundeepsingh/vscode/ajp.html"><img src="/Volumes/HargunSD/ajm.png" alt="Playlist Image"></a>
+        <div class="playlist-info">
+          <div class="playlist-title" id="ajt">Anuv Jain Mix</div>
+          <div class="playlist-description" id="ajdes">Best of Anuv Jain</div>
+        </div>
+      </div>
+      <div class="playlist" id="Taylor swift ">
+        <a href="/Users/hargundeepsingh/vscode/ts.html"><img src="/Volumes/HargunSD/ts.png" alt="Playlist Image"></a>
+        <div class="playlist-info">
+          <div class="playlist-title" id="tst">Taylor Swift</div>
+          <div class="playlist-description" id="tsdes">1988-Taylor Swift</div>
+        </div>
+      </div>
+      <div class="playlist" id="Car plylist">
+        <a href="/Users/hargundeepsingh/vscode/cpl.html"><img src="/Volumes/HargunSD/cp.png" alt="Playlist Image"></a>
+        <div class="playlist-info">
+          <div class="playlist-title" id="cart">Car Playlist</div>
+          <div class="playlist-description" id="cardes">Vibe In Car Songs.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <script src="https://kit.fontawesome.com/67ae9b72c4.js" crossorigin="anonymous"></script>
+  <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("languageButton").style.marginLeft = "1000px";
+  
+  }
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("languageButton").style.marginLeft = "1000px";
+ 
+
+}
+
+document.getElementById('searchInput').addEventListener('input', function() {
+        var searchInput = this.value.toLowerCase();
+        var items = document.querySelectorAll('#featured-playlists div');
+    
+        items.forEach(function(item) {
+            var itemName = item.textContent.toLowerCase();
+    
+            if (itemName.includes(searchInput)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+
+
+    const languages = {
+      en: {
+        punjabititle: "TOP 10 Punjabi Songs",
+        p: "Top 10 Punjabi Songs",
+        punjabides: "Trending punjabi songs",
+
+        bolltitle: "Bollywood Hits-10",
+        b: "Bollywood Hits-10",
+        bolldes: "Bollywood Best",
+
+        gymt: "Gym Playlist 2.O",
+        t: "Gym Playlist 2.O",
+        gymdes: "Workout & Burn Calories.    Enjoy Workout🔥",
+
+        ajt: "Anuv Jain Mix",
+        a: "Anuv Jain Mix",
+        ajdes: "Best of Anuv Jain",
+
+        tst: "Taylor Swift",
+        ts: "Taylor Swift",
+        tsdes: "1988-Taylor Swift",
+
+        cart: "Car Playlist",
+        c: "Car Playlist",
+        cardes: "Vibe In Car Songs",
+
+        toptt:"Featured Playlists",
+        yp:"Recently Played",
+
+
+
+        a:"Car Playlists",
+        bb:"Anuv Jain",
+        cc:"Taylor Swift",
+        d:"Gym Playlist",
+        e:"Bollywood Hits-10",
+        f:"Top 10 Punjabi Songs",
+
+
+
+      
+
+      },
+      hi: {
+        punjabititle: "टॉप 10 पंजाबी गाने",
+        p: "टॉप 10 पंजाबी गाने",
+        f: "टॉप 10 पंजाबी गाने",
+        punjabides: "ट्रेंडिंग पंजाबी गाने",
+
+        bolltitle: "बॉलीवुड हिट्स-10",
+        b: "बॉलीवुड हिट्स-10",
+        e: "बॉलीवुड हिट्स-10",
+        bolldes: "बॉलीवुड बेस्ट",
+
+        gymt: "जिम प्लेलिस्ट",
+        t: "जिम प्लेलिस्ट",
+        d: "जिम प्लेलिस्ट",
+        gymdes: "कसरत करें और वजन कम करें",
+
+        ajt: "अनुव जैन",
+        a: "अनुव जैन",
+        bb: "अनुव जैन",
+        ajdes: "अनुव जैन का सर्वश्रेष्ठ संगीत",
+
+        tst: "टेलर स्विफ्ट",
+        ts: "टेलर स्विफ्ट",
+        cc: "टेलर स्विफ्ट",
+        tsdes: "1988-टेलर स्विफ्ट",
+
+        cart: "कार प्लेलिस्ट",
+        c: "कार प्लेलिस्ट",
+        a: "कार प्लेलिस्ट",
+        cardes: "वाइब इन कार गाने",
+
+        toptt:"प्रदर्शित प्लेलिस्ट",
+        yp:"हाल ही में बजाया",
+
+
+  
+        
+
+        
+
+        
+
+        
+      }
+    };
+    
+    
+    let currentLanguage = "en";
+    
+   
+    function updateContent() {
+      document.getElementById("punjabititle").textContent = languages[currentLanguage].punjabititle;
+      document.getElementById("p").textContent = languages[currentLanguage].p;
+      document.getElementById("punjabides").textContent = languages[currentLanguage].punjabides;
+
+      document.getElementById("bolltitle").textContent = languages[currentLanguage].bolltitle;
+      document.getElementById("b").textContent = languages[currentLanguage].b;
+      document.getElementById("bolldes").textContent = languages[currentLanguage].bolldes;
+
+      document.getElementById("gymt").textContent = languages[currentLanguage].gymt;
+      document.getElementById("t").textContent = languages[currentLanguage].t;
+      document.getElementById("gymdes").textContent = languages[currentLanguage].gymdes;
+
+      document.getElementById("ajt").textContent = languages[currentLanguage].ajt;
+      document.getElementById("a").textContent = languages[currentLanguage].a;
+      document.getElementById("ajdes").textContent = languages[currentLanguage].ajdes;
+
+      document.getElementById("tst").textContent = languages[currentLanguage].tst;
+      document.getElementById("ts").textContent = languages[currentLanguage].ts;
+      document.getElementById("tsdes").textContent = languages[currentLanguage].tsdes;
+
+      document.getElementById("cart").textContent = languages[currentLanguage].cart;
+      document.getElementById("c").textContent = languages[currentLanguage].c;
+      document.getElementById("cardes").textContent = languages[currentLanguage].cardes;
+
+      document.getElementById("yp").textContent = languages[currentLanguage].yp;
+      document.getElementById("toptt").textContent = languages[currentLanguage].toptt;
+
+      document.getElementById("a").textContent = languages[currentLanguage].a;
+      document.getElementById("bb").textContent = languages[currentLanguage].bb;
+      document.getElementById("cc").textContent = languages[currentLanguage].cc;
+      document.getElementById("d").textContent = languages[currentLanguage].d;
+      document.getElementById("e").textContent = languages[currentLanguage].e;
+      document.getElementById("f").textContent = languages[currentLanguage].f;
+     
+      
+    }
+    
+ 
+    function toggleLanguage() {
+      currentLanguage = (currentLanguage === "en") ? "hi" : "en";
+      updateContent();
+    }
+    
+   
+    updateContent();
+    
+   
+    document.getElementById("languageButton").addEventListener("click", toggleLanguage);
+
+var isFirstGradient = true;
+
+function toggleGradient() {
+  if (isFirstGradient) {
+    // Change body background color to the second gradient
+    document.body.style.backgroundImage = "radial-gradient(circle, rgba(0,0,0,1) 37%, rgba(57,56,57,1) 70%);"; // Example gradient from blue to cyan
+  } else {
+    // Change body background color to the first gradient
+    document.body.style.backgroundImage = "radial-gradient(circle, #FFFFFF, #393839)"; // Initial gradient
+    document.getElementById("yp").style.color="black";
+    document.getElementById("toptt").style.color="black";
+  }
+  // Toggle the flag
+  isFirstGradient = !isFirstGradient;
+}
+    </script>
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+apiKey: "AIzaSyBDs2cBIcv8dwIpGd23-GkqSbfghcSDTWE",
+authDomain: "musico-auth.firebaseapp.com",
+databaseURL: "https://musico-auth-default-rtdb.firebaseio.com",
+projectId: "musico-auth",
+storageBucket: "musico-auth.appspot.com",
+messagingSenderId: "881812235522",
+appId: "1:881812235522:web:0489aa0507fbd6d595ce1b"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth();
+  console.log(app);
+
+  
+
+  //----- New Registration code start	  
+  
+
+  //----- Logout code start	  
+  document.getElementById("logout").addEventListener("click", function() {
+      signOut(auth).then(() => {
+          // Sign-out successful.
+          console.log('Sign-out successful.');
+          window.location = '/Users/hargundeepsingh/vscode/login.html';
+        }).catch((error) => { 
+          // An error happened.
+          console.log('An error happened.');
+        });		  		  
+  });
+  //----- End
+
+</script>
+</html>
