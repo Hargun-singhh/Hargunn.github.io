@@ -29,7 +29,7 @@
 					<a href="#" class="social"><i class="fab fa fa-google fa-2x"></i></a>
 				</div>
 				<span id="spant" >Enter Your Details</span>
-        <input type="text" placeholder="Name" required id="name">
+        <input type="text" placeholder="Name" required id="name" onkeydown="return /[a-zA-Z]/i.test(event.key)">
 				<input type="email" placeholder="Email" required id="email"/>
 				<input type="password" placeholder="Password" required id="password"/>
 
