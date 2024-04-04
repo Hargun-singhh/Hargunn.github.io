@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Bootstrap css cdn link -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -292,7 +296,62 @@ input[type=text]::placeholder{
   </style>
 </head>
     <body>
-  <nav>
+
+
+
+
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+          <img src="navpics/logonew3.png" alt="MusicO" width="30" height="30" class="d-inline-block align-top">
+          MusicO
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+          <ul class="navbar-nav mr-auto d-none d-lg-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="nav.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="top10.html">Top Punjabi Songs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="car_playlist.html">Gym Playlist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="anuv_jain.html">Anuv Jain Mix</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="bollywood.html">Bollywood Hits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="taylor_swift.html">Taylor Swift</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="carplaylist.html">Car Playlist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="createplaylist.html">Create Playlist</a>
+            </li>
+          </ul>
+          
+      
+          <form class="form-inline my-2 my-lg-0 ml-auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="What do you want to listen to ?" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-arrow-right-from-bracket"></i></button>
+          </form>
+          <i class="fas fa-language fa-xl" style="color: white; margin-left: 10px;"></i>
+        </div>
+      </nav>
+
+
+
+
+  <!-- <nav>
 		<ul>
 			<li class="brand"><img src="navpics/logonew3.png" alt="MusicO">MusicO</li>
       <div id="mySidenav" class="sidenav">
@@ -319,8 +378,9 @@ input[type=text]::placeholder{
         
       </div>
 		</ul>
-    
-	</nav>
+	</nav> -->
+
+  
   <h2 id="yp">Recently Played</h2>
     <div class="sc">
         <div class="st">
@@ -422,6 +482,10 @@ input[type=text]::placeholder{
   </div>
   
   <script src="https://kit.fontawesome.com/67ae9b72c4.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script>
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -656,6 +720,9 @@ const app = initializeApp(firebaseConfig);
         });		  		  
   });
   //----- End
+
+
+  
 
 </script>
 </html>
