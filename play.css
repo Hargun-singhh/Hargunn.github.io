@@ -146,8 +146,8 @@ background: linear-gradient(320deg,  rgb(119, 151, 255) 20%, rgba(5,2,2,1) 50%);
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
-    background: black;
-    background: linear-gradient(320deg, rgb(119, 151, 255) 1%, rgba(5,2,2,1) 28%);
+    background: rgb(125,35,218);
+    background: linear-gradient(320deg, rgba(57,56,57,1) 1%, rgba(5,2,2,1) 28%);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
@@ -244,7 +244,7 @@ input[type=text] {
   font-size: 17px;
   margin-left: 20px;
   margin-right: 20px;
-  border-color: rgba(127, 35, 218, 0.376);
+  border-color: rgb(119, 151, 255);
   border-radius: 50px;
   border-style: solid;
   background: rgb(77,77,77);
