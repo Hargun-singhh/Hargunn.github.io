@@ -76,9 +76,10 @@ background: #000000ca;
     padding: 0;
     margin: 0;
 }
-nav{
+/* nav{
       font-family: "Rubik";
-}
+} */
+
 body{
   /* background: rgb(0,0,0);  */
  background-image: radial-gradient(circle, rgba(0,0,0,1) 37%, rgba(57,56,57,1) 70%);
@@ -89,32 +90,32 @@ body{
   transition: background-color 0.5s ease;
 }
 
-nav ul{
+/* nav ul{
     display: flex;
     list-style-type: none;
     align-items: center;
-    height: 60px;
+    height: 60px; */
     /* background: rgb(77,77,77);
     background: linear-gradient(180deg, rgba(77,77,77,1) 0%, rgba(127, 35, 218, 0.796) 0%, rgba(0,8,10,1) 55%, rgba(0,10,11,1) 100%); */
     /* background: rgb(0,0,0);
 background: radial-gradient(circle, rgba(0,0,0,1) 37%, rgba(57,56,57,1) 70%); */
-background: black;
+/* background: black;
     color: rgba(245, 245, 245, 0.908);
     cursor: pointer;
-}
-
+} */
+/* 
 nav ul li{
     padding: 0 12px;
     cursor: pointer;
 }
 nav ul li:hover{
     color: rgba(57,56,57,1);
-}
-span:hover{
+} */
+/* span:hover{
   color: #484649;
-}
+} */
 
-  .brand img{
+  /* .brand img{
     width: 80px;
 }
 
@@ -124,9 +125,9 @@ span:hover{
     align-items: center;
     font-weight: bolder;
     font-size: 1.3rem;
-}
+} */
 
-.sidenav {
+/* .sidenav {
   height: 100%; 
   width: 0; 
   position: fixed; 
@@ -162,19 +163,19 @@ span:hover{
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-}
+} */
 
 
-#main {
+/* #main {
   transition: margin-left .5s;
   padding: 20px;
-}
+} */
 
 
-@media screen and (max-height: 450px) {
+/* @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
+} */
 
 #contact {
 
@@ -297,6 +298,8 @@ input[type=text]::placeholder{
 }
 
 
+
+
   </style>
 </head>
     <body>
@@ -304,17 +307,17 @@ input[type=text]::placeholder{
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand d-flex align-items-center me-auto" href="#">
-            <img src="navpics/logonew3.png" alt="Logo" width="60" height="60" class="me-2">
+            <img src="navpics/logonew3.png" alt="MusicO" width="80" height="80" class="me-2" style="font-weight: bolder;">
             MusicO
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fas fa-bars"></i>
+                  <i class="fa-solid fa-bars"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
@@ -326,16 +329,16 @@ input[type=text]::placeholder{
             </ul>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-language"></i></a>
+                <a class="nav-link" href="#"><i class="fas fa-language" ></i></a>
               </li>
               <li class="nav-item">
                 <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <input class="form-control me-2" type="search" placeholder="What do you want to listen to ?" aria-label="Search">
                   <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
                 </form>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-xl fa-arrow-right-from-bracket" style="color: white;"></i> </a>
               </li>
             </ul>
           </div>
@@ -343,7 +346,7 @@ input[type=text]::placeholder{
       </nav>
 
 
-  <!-- <nav>
+   <!-- /* <nav>
 		<ul>
 			<li class="brand"><img src="navpics/logonew3.png" alt="MusicO">MusicO</li>
       <div id="mySidenav" class="sidenav">
@@ -371,7 +374,7 @@ input[type=text]::placeholder{
         
       </div>
 		</ul>
-	</nav>  -->
+	</nav>   */ -->
 
   
   <h2 id="yp">Recently Played</h2>
