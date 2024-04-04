@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <!-- Bootstrap css cdn link -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!--bootstrap cdn css link  -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -297,58 +300,46 @@ input[type=text]::placeholder{
 </head>
     <body>
 
-
-
-
-
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-          <img src="navpics/logonew3.png" alt="MusicO" width="30" height="30" class="d-inline-block align-top">
-          MusicO
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          
-          <ul class="navbar-nav mr-auto d-none d-lg-flex">
-            <li class="nav-item">
-              <a class="nav-link" href="nav.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="top10.html">Top Punjabi Songs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="car_playlist.html">Gym Playlist</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="anuv_jain.html">Anuv Jain Mix</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="bollywood.html">Bollywood Hits</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="taylor_swift.html">Taylor Swift</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="carplaylist.html">Car Playlist</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="createplaylist.html">Create Playlist</a>
-            </li>
-          </ul>
-          
-      
-          <form class="form-inline my-2 my-lg-0 ml-auto">
-            <input class="form-control mr-sm-2" type="search" placeholder="What do you want to listen to ?" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-arrow-right-from-bracket"></i></button>
-          </form>
-          <i class="fas fa-language fa-xl" style="color: white; margin-left: 10px;"></i>
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex align-items-center me-auto" href="#">
+            <img src="navpics/logonew3.png" alt="Logo" width="60" height="60" class="me-2">
+            MusicO
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-bars"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+                  <li><a href="nav.html">About</a></a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Dropdown Item 3</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-language"></i></a>
+              </li>
+              <li class="nav-item">
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
-
-
 
 
   <!-- <nav>
@@ -365,7 +356,8 @@ input[type=text]::placeholder{
         <a id="c" href="carplaylist.html">Car Playlist</a>
         <a  id="l" href="createplaylist.html">Create Playlist</a>
       </div>
-      <span id="ett" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+      <span id="ett" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>  
+      
       <div id="main">
       </div>
       <div class="search-container">
@@ -378,7 +370,7 @@ input[type=text]::placeholder{
         
       </div>
 		</ul>
-	</nav> -->
+	</nav>  -->
 
   
   <h2 id="yp">Recently Played</h2>
@@ -485,6 +477,8 @@ input[type=text]::placeholder{
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
   <script>
 function openNav() {
