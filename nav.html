@@ -82,7 +82,7 @@ background: #000000ca;
 
 body{
   /* background: rgb(0,0,0);  */
- background-image: radial-gradient(circle, rgba(0,0,0,1) 37%, rgba(57,56,57,1) 70%);
+ background-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(24, 90, 175) 90%);
 
   font-family: "Rubik";
   margin: 0;
@@ -90,7 +90,7 @@ body{
   transition: background-color 0.5s ease;
 }
 
-/* nav ul{
+/* /* nav ul{
     display: flex;
     list-style-type: none;
     align-items: center;
@@ -103,7 +103,7 @@ background: radial-gradient(circle, rgba(0,0,0,1) 37%, rgba(57,56,57,1) 70%); */
     color: rgba(245, 245, 245, 0.908);
     cursor: pointer;
 } */
-/* 
+/*  */
 nav ul li{
     padding: 0 12px;
     cursor: pointer;
@@ -328,18 +328,15 @@ input[type=text]::placeholder{
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-language" ></i></a>
-              </li>
-              <li class="nav-item">
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="What do you want to listen to ?" aria-label="Search">
-                  <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+              <div class="search-container">
+                <form action="">
+                  <i id="languageButton" class="fa-solid fa-language fa-xl" style="color: white; margin-left: 990px;"></i>
+                  <input  type="text" placeholder="What do you want to listen to ?" name="search" id="searchInput">
+                  <a id="logout" style="color: white;"><i class="fa-solid fa-xl fa-arrow-right-from-bracket"></i> </a>
+                
                 </form>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa-solid fa-xl fa-arrow-right-from-bracket" style="color: white;"></i> </a>
-              </li>
+                
+              </div>
             </ul>
           </div>
         </div>
