@@ -142,7 +142,7 @@ background: linear-gradient(320deg,  rgb(119, 151, 255) 20%, rgba(5,2,2,1) 50%);
   
   .container {
     position: relative;
-    right: 10%;
+    right: 12%;
     max-width: 400px;
     margin: 20px auto;
     padding: 20px;
